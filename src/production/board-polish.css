@@ -34,3 +34,51 @@
 @media (max-width: 900px) { .board-toolbar { padding: 10px; } .board-filters { width: 100%; } }
 @media (max-width: 640px) { .board-toolbar { border-radius: 12px; } .board-mode { width: 100%; } .board-filters { align-items: stretch; } .board-filters select { flex: 1 1 100%; max-width: none; } .kanban-column { flex-basis: 88%; } .task-art { height: 128px; } .board-footnote { margin-bottom: 62px; } }
 
+
+/* Mobile containment: only the kanban may scroll sideways. */
+main[data-view="production"] {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+main[data-view="production"] .board-toolbar,
+main[data-view="production"] .board-footnote {
+  max-width: 100%;
+  min-width: 0;
+}
+main[data-view="production"] .kanban {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
+}
+main[data-view="production"] .kanban-column {
+  min-width: 0;
+}
+@media (max-width: 640px) {
+  html:has(main[data-view="production"]),
+  body:has(main[data-view="production"]) {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  main[data-view="production"] {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  main[data-view="production"] .board-toolbar {
+    overflow: hidden;
+  }
+  main[data-view="production"] .kanban {
+    width: calc(100vw - 36px);
+    max-width: calc(100vw - 36px);
+    overscroll-behavior: contain;
+  }
+  main[data-view="production"] .kanban-column {
+    flex: 0 0 calc(100vw - 70px);
+    max-width: calc(100vw - 70px);
+  }
+}
