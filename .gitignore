@@ -1,0 +1,13 @@
+node_modules/
+*.log
+coverage/
+orbita-workspace-*.json
+
+dist/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.zip
+.DS_Store

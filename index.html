@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Órbita — seu espaço de criação e operação de conteúdo com agentes."
+    />
+    <title>Órbita · Seu estúdio em movimento</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23000000'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23b7ff00' stroke-width='7'/%3E%3Ccircle cx='47' cy='18' r='7' fill='%23b7ff00'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./src/production/styles.css" />
+    <script type="module" src="./src/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Ir para o conteúdo</a>
+    <canvas id="neural-background" aria-hidden="true"></canvas>
+    <div class="neural-motion-control">
+      <button
+        id="neural-motion-toggle"
+        type="button"
+        aria-pressed="false"
+        aria-describedby="neural-description"
+      >
+        <span class="neural-control-icon" aria-hidden="true">✧</span>
+        <span>Neural <span data-motion-state>estático</span></span>
+      </button>
+      <span id="neural-description" class="sr-only"
+        >Animação decorativa de fundo. Não representa processamento de IA.</span
+      >
+    </div>
+    <div id="app"></div>
+    <div id="overlay"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <noscript>Ative o JavaScript para abrir seu estúdio.</noscript>
+  </body>
+</html>
