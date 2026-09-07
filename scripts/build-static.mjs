@@ -11,6 +11,7 @@ export const STATIC_FILES = [
   "src/neural-background.js",
   "src/styles.css",
   "src/production/styles.css",
+  "src/production/board-polish.css",
   "src/production/catalog.js",
   "src/production/engine.js",
   "src/production/ui.js",
